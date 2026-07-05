@@ -1,11 +1,482 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>AnestICU</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AnestICU — Referência rápida em Anestesia e Terapia Intensiva</title>
+<meta name="description" content="AnestICU reúne protocolos, calculadoras, doses de medicamentos e referências clínicas para anestesiologistas, intensivistas, emergencistas e residentes. Acesso rápido, inclusive offline." />
+<meta name="keywords" content="anestesia, terapia intensiva, UTI, anestesiologia, aplicativo médico, calculadora médica, protocolos clínicos, gasometria, ROTEM, via aérea, emergência" />
+<meta name="author" content="Luís Henrique Martins Gonçalves" />
+<link rel="canonical" href="https://anesticu.app/index.html" />
+
+<!-- Favicon e PWA -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0071e3" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AnestICU — Referência rápida em Anestesia e Terapia Intensiva" />
+<meta property="og:description" content="Protocolos, calculadoras, doses e referências clínicas para uso no centro cirúrgico, UTI e emergência." />
+<meta property="og:image" content="https://anesticu.app/assets/social-preview.png" />
+<meta property="og:url" content="https://anesticu.app/index.html" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="AnestICU" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AnestICU — Referência rápida em Anestesia e Terapia Intensiva" />
+<meta name="twitter:description" content="Protocolos, calculadoras, doses e referências clínicas para anestesiologistas e intensivistas." />
+<meta name="twitter:image" content="https://anesticu.app/assets/social-preview.png" />
+
+<!-- Fontes (Google Fonts) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- Schema.org: MedicalWebPage / MobileApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "AnestICU",
+  "applicationCategory": "MedicalApplication",
+  "operatingSystem": "iOS",
+  "description": "Aplicativo de referência rápida em anestesia e terapia intensiva com protocolos, calculadoras, doses e algoritmos clínicos.",
+  "author": {
+    "@type": "Person",
+    "name": "Luís Henrique Martins Gonçalves"
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "subscription"
+  }
+}
+</script>
 </head>
 <body>
-    <h1>AnestICU</h1>
-    <p>Site em construção.</p>
+
+<a class="visually-hidden" href="#main">Pular para o conteúdo</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.svg" alt="" width="28" height="28" />
+      <span>AnestICU</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#recursos">Recursos</a>
+      <a href="#capturas">Capturas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="contact.html">Contato</a>
+    </nav>
+
+    <div class="nav-secondary-links" aria-label="Navegação legal">
+      <a href="privacy.html">Política de Privacidade</a>
+      <a href="terms.html">Termos</a>
+    </div>
+
+    <div class="nav-cta">
+      <a href="#download" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.88rem;">Baixar</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#recursos">Recursos</a>
+    <a href="#capturas">Capturas</a>
+    <a href="#sobre">Sobre</a>
+    <a href="contact.html">Contato</a>
+    <a href="privacy.html">Política de Privacidade</a>
+    <a href="terms.html">Termos</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <svg class="hero-ecg" viewBox="0 0 600 90" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 45 H120 L140 20 L160 70 L180 10 L200 45 H260 L280 45 L300 25 L320 65 L340 45 H420 L440 15 L460 75 L480 45 H600" />
+    </svg>
+
+    <div class="container">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Feito por anestesiologista · para a linha de frente</span>
+        <h1>AnestICU</h1>
+        <p class="lede-title">Referência rápida em Anestesia e Terapia Intensiva.</p>
+        <p class="lede">Protocolos, calculadoras, doses, infusões e referências clínicas desenvolvidas para uso no centro cirúrgico, terapia intensiva e medicina de emergência.</p>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.5 6 12h3.5V4h5v8H18z"/><path d="M4 20h16"/></svg>
+            Baixar na App Store
+          </a>
+          <a href="#" class="btn btn-secondary btn-lg" aria-disabled="true" tabindex="-1">Google Play — Em breve</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>17</strong>
+            <span>áreas clínicas cobertas</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>funciona offline*</span>
+          </div>
+          <div>
+            <strong>2026</strong>
+            <span>revisão contínua</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-figure reveal">
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="mock-ui">
+              <div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div>
+              <span class="mock-badge blue">PROTOCOLO · PCR</span>
+              <div class="mock-card">
+                <span class="mock-title">Adrenalina</span>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+              </div>
+              <div class="mock-card">
+                <span class="mock-title">Ritmo chocável</span>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+              </div>
+              <span class="mock-badge green">CALCULADORA · GASOMETRIA</span>
+              <div class="mock-card">
+                <span class="mock-title">pH / PaCO₂ / HCO₃⁻</span>
+                <div class="mock-line short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-chip chip-1"><span class="dot green"></span> Modo offline ativo</div>
+        <div class="floating-chip chip-2"><span class="dot blue"></span> Atualizado · Jul 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TRUST BAR ===================== -->
+  <div class="trust-bar">
+    <div class="container">
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          Conteúdo revisado clinicamente
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+          Atualizações frequentes
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-red)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg>
+          Nenhum dado clínico enviado a servidores
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== RECURSOS ===================== -->
+  <section class="section" id="recursos">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Recursos</span>
+        <h2>Tudo que você consulta durante o plantão, em um só lugar</h2>
+        <p class="lede">Do centro cirúrgico à UTI, passando pela emergência — organizado para ser encontrado em segundos.</p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h6M9 19h3"/></svg></div>
+          <h3>Protocolos</h3>
+          <p>Condutas passo a passo para as situações mais frequentes do dia a dia.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M8 12h1M11.5 12h1M15 12h1M8 16h1M11.5 16h1M15 16h1"/></svg></div>
+          <h3>Calculadoras</h3>
+          <p>Doses, escores e conversões calculados na hora, sem margem para erro manual.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg></div>
+          <h3>Infusões</h3>
+          <p>Cálculo rápido de taxas de infusão contínua por peso e concentração.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="5" transform="rotate(45 12 12)"/><path d="M9.5 14.5l5-5"/></svg></div>
+          <h3>Medicamentos</h3>
+          <p>Doses, diluições e observações práticas dos fármacos mais usados.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a4.4 4.4 0 0 0-8.8-1.1 4.4 4.4 0 0 0-8.8 1.1c0 5 8.8 10.9 8.8 10.9s8.8-5.9 8.8-10.9z"/></svg></div>
+          <h3>Anestesia Obstétrica</h3>
+          <p>Particularidades da gestante, do parto e das urgências obstétricas.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M7 21c0-4 2.5-6 5-6s5 2 5 6"/></svg></div>
+          <h3>Pediatria</h3>
+          <p>Doses por peso, fita de Broselow e condutas específicas para crianças.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></svg></div>
+          <h3>Via Aérea</h3>
+          <p>Algoritmos de via aérea difícil e sequência rápida de intubação.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c3-6 6-6 9 0"/><path d="M13 12c3-6 6-6 9 0"/></svg></div>
+          <h3>Ultrassom</h3>
+          <p>Guia de janelas ecográficas para bloqueios e acessos vasculares.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/><path d="M9.5 12h5"/></svg></div>
+          <h3>Hemoterapia</h3>
+          <p>Indicações e condutas transfusionais para o sangramento agudo.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4M15 3v4M6 9h12l-1 11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z"/></svg></div>
+          <h3>Gasometria</h3>
+          <p>Interpretação em cascata e comparação arterial × venosa passo a passo.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="4" height="8"/><rect x="10" y="6" width="4" height="12"/><rect x="17" y="3" width="4" height="15"/></svg></div>
+          <h3>ROTEM</h3>
+          <p>Leitura da tromboelastometria e sua correlação com a coagulação.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a4.4 4.4 0 0 0-8.8-1.1 4.4 4.4 0 0 0-8.8 1.1c0 5 8.8 10.9 8.8 10.9s8.8-5.9 8.8-10.9z"/><path d="M6 12h3l1.5-3L13 15l1.5-3H18"/></svg></div>
+          <h3>PCR</h3>
+          <p>Algoritmo de suporte avançado de vida com tempos e doses em destaque.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Choque</h3>
+          <p>Diferenciação e condutas para os principais tipos de choque circulatório.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h11a3 3 0 1 0-3-3M4 12h15a3 3 0 1 1-3 3M4 18h9a3 3 0 1 0-3 3"/></svg></div>
+          <h3>Ventilação Mecânica</h3>
+          <p>Parâmetros iniciais, ajustes e estratégias protetoras por perfil de paciente.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M6 20h12M9 16v4M15 16v4"/><path d="M6 10h3l1.5-3L12 13l1.5-3H18"/></svg></div>
+          <h3>Terapia Intensiva</h3>
+          <p>Escores, sedação, monitorização e condutas do dia a dia da UTI.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div>
+          <h3>Atualizações frequentes</h3>
+          <p>Conteúdo revisado continuamente com base em literatura e diretrizes atuais.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18h.01"/><path d="M9.2 15.2a4 4 0 0 1 5.6 0"/><path d="M6.5 12.5a8 8 0 0 1 11 0"/><path d="M3.8 9.8a12 12 0 0 1 16.4 0" opacity=".35"/><path d="M2 2l20 20"/></svg></div>
+          <h3>Modo offline</h3>
+          <p>A maior parte do conteúdo funciona sem qualquer conexão com a internet.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPTURAS DE TELA ===================== -->
+  <section class="section section-alt" id="capturas">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Capturas</span>
+        <h2>O aplicativo, na prática</h2>
+        <p class="lede">Substitua as telas abaixo pelas capturas reais do app em <code>assets/screenshots/</code>.</p>
+      </div>
+
+      <!-- Versão desktop: telas lado a lado -->
+      <div class="screens-row">
+        <div class="screens-row-item reveal">
+          <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge blue">PROTOCOLOS</span><div class="mock-card"><span class="mock-title">Sepse</span><div class="mock-line"></div></div><div class="mock-card"><span class="mock-title">AVC</span><div class="mock-line"></div></div></div></div></div>
+          <p>Protocolos</p>
+        </div>
+        <div class="screens-row-item reveal">
+          <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge green">CALCULADORA</span><div class="mock-card"><span class="mock-title">Gasometria</span><div class="mock-line"></div><div class="mock-line short"></div></div></div></div></div>
+          <p>Calculadoras</p>
+        </div>
+        <div class="screens-row-item reveal">
+          <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge red">VIA AÉREA</span><div class="mock-card"><span class="mock-title">Cormack-Lehane</span><div class="mock-line"></div></div></div></div></div>
+          <p>Via Aérea</p>
+        </div>
+        <div class="screens-row-item reveal">
+          <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge blue">PEDIATRIA</span><div class="mock-card"><span class="mock-title">Broselow</span><div class="mock-line"></div></div></div></div></div>
+          <p>Pediatria</p>
+        </div>
+      </div>
+
+      <!-- Versão mobile: carrossel -->
+      <div class="carousel reveal">
+        <div class="carousel-track-wrap">
+          <div class="carousel-track">
+
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge blue">PROTOCOLOS</span><div class="mock-card"><span class="mock-title">Sepse</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge green">CALCULADORA</span><div class="mock-card"><span class="mock-title">Gasometria</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge red">VIA AÉREA</span><div class="mock-card"><span class="mock-title">Cormack-Lehane</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge blue">PEDIATRIA</span><div class="mock-card"><span class="mock-title">Broselow</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge green">ROTEM</span><div class="mock-card"><span class="mock-title">Tromboelastometria</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge red">PCR</span><div class="mock-card"><span class="mock-title">Suporte avançado</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge blue">VENTILAÇÃO</span><div class="mock-card"><span class="mock-title">Parâmetros iniciais</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+            <div class="carousel-slide">
+              <div class="phone-mock"><div class="phone-screen"><div class="mock-ui"><div class="mock-topbar"><span>AnestICU</span><span>09:41</span></div><span class="mock-badge green">UTI</span><div class="mock-card"><span class="mock-title">Escores clínicos</span><div class="mock-line"></div></div></div></div></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" aria-label="Captura anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="carousel-dots"></div>
+          <button class="carousel-btn next" aria-label="Próxima captura"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section class="section" id="sobre">
+    <div class="container about-grid">
+      <div class="about-visual reveal">
+        <div class="stat-row"><strong>17</strong><span>áreas clínicas organizadas em um só app</span></div>
+        <div class="stat-row"><strong>1</strong><span>anestesiologista brasileiro por trás do conteúdo</span></div>
+        <div class="stat-row"><strong>2026</strong><span>revisão contínua da literatura</span></div>
+      </div>
+
+      <div class="about-copy reveal">
+        <span class="eyebrow">Sobre o projeto</span>
+        <h2>Desenvolvido por anestesiologista para anestesiologistas.</h2>
+        <p>O AnestICU nasceu da necessidade de reunir em um único aplicativo as informações mais utilizadas durante a prática clínica diária.</p>
+        <p>Todo o conteúdo é continuamente revisado e atualizado com base em literatura científica, diretrizes internacionais e experiência clínica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AVISO IMPORTANTE ===================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="notice reveal">
+        <div class="notice-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        </div>
+        <div>
+          <h3>Aviso importante</h3>
+          <p>O AnestICU é uma ferramenta educacional e de apoio à decisão clínica.</p>
+          <p>O aplicativo não substitui o julgamento médico, protocolos institucionais ou diretrizes locais. Toda decisão clínica permanece sob responsabilidade do profissional assistente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL / DOWNLOAD ===================== -->
+  <section class="section" id="download">
+    <div class="container">
+      <div class="final-cta reveal">
+        <span class="eyebrow">Disponível para iPhone</span>
+        <h2>Leve o AnestICU para o seu plantão</h2>
+        <p class="lede">Assinatura mensal ou anual, processada com segurança pela App Store.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary btn-lg">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 17.5 6 12h3.5V4h5v8H18z"/><path d="M4 20h16"/></svg>
+            Baixar na App Store
+          </a>
+          <a href="#" class="btn btn-secondary btn-lg" aria-disabled="true" tabindex="-1">Google Play — Em breve</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <svg class="ecg-divider" viewBox="0 0 800 24" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 12 H320 L335 3 L350 21 L365 12 H480 L495 3 L510 21 L525 12 H800"/>
+    </svg>
+
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="" width="26" height="26" />
+          <span>AnestICU</span>
+        </div>
+        <p class="footer-tagline">Referência rápida em Anestesia e Terapia Intensiva.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#capturas">Capturas</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Política de Privacidade</a></li>
+          <li><a href="terms.html">Termos de Uso</a></li>
+          <li><a href="contact.html">Contato</a></li>
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Luís Henrique Martins Gonçalves. Todos os direitos reservados.</span>
+      <span>Feito para quem cuida.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
 </body>
 </html>

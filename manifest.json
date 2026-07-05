@@ -1,0 +1,19 @@
+{
+  "name": "AnestICU - Referência em Anestesia e Terapia Intensiva",
+  "short_name": "AnestICU",
+  "description": "Protocolos, calculadoras, doses e referências clínicas para anestesiologia, terapia intensiva e emergência.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0071E3",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
