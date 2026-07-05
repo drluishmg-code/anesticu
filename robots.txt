@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anesticu.app/sitemap.xml
+Sitemap: https://drluishmg-code.github.io/anesticu/sitemap.xml

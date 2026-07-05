@@ -22,13 +22,13 @@ Site estático (HTML + CSS + JS puro, sem frameworks, sem build) pronto para pub
 
 ## Antes de publicar — o que trocar
 
-1. **Domínio real**: troque `https://anesticu.app` por seu domínio definitivo em:
+1. **Domínio real**: troque `https://drluishmg-code.github.io/anesticu` por seu domínio definitivo em:
    - `index.html`, `privacy.html`, `terms.html`, `contact.html` (tags `canonical` e Open Graph)
    - `robots.txt` e `sitemap.xml`
 
-2. **E-mail de contato**: em `contact.html`, troque `contato@anesticu.app` pelo e-mail real.
+2. **E-mail de contato**: em `contact.html`, troque `drluishmg@gmail.com` pelo e-mail real.
 
-3. **Instagram**: troque os links `https://instagram.com/` (aparecem em `contact.html` e nos rodapés de todas as páginas) pelo perfil real.
+3. **Instagram**: troque os links `https://instagram.com/anesticu` (aparecem em `contact.html` e nos rodapés de todas as páginas) pelo perfil real.
 
 4. **Link da App Store**: os botões "Baixar na App Store" (em `index.html`) usam `href="#"` como placeholder. Assim que o app for publicado, troque pelo link real da App Store.
 
