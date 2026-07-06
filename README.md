@@ -15,8 +15,8 @@ Site estático (HTML + CSS + JS puro, sem frameworks, sem build) pronto para pub
 ├── robots.txt
 ├── sitemap.xml
 └── assets/
-    ├── logo.png           → logo do app (usado no header, rodapé e favicon)
-    ├── favicon.svg
+    ├── logo.png           → logo do app (usado no header, rodapé e logo.png)
+    ├── logo.png.svg
     └── screenshots/       → pasta reservada para as capturas reais do app
 ```
 
@@ -36,7 +36,7 @@ Site estático (HTML + CSS + JS puro, sem frameworks, sem build) pronto para pub
    - Exporte 8 capturas do app (proporção iPhone, ex. 1170×2532px), salve em `assets/screenshots/01.png` a `08.png`.
    - Em `index.html`, dentro de cada `.phone-mock`, substitua o conteúdo de `.phone-screen` por `<img src="assets/screenshots/01.png" alt="Tela de protocolos do AnestICU" loading="lazy" />` (repita para as demais).
 
-6. **Ícone de app (favicon/apple-touch-icon)**: o projeto usa um ícone SVG (`assets/favicon.svg`), compatível com a maioria dos navegadores modernos. Se quiser garantir suporte total (inclusive navegadores mais antigos), gere também `favicon.ico` (32×32) e `apple-touch-icon.png` (180×180) a partir do mesmo logo, e adicione as tags correspondentes no `<head>`.
+6. **Ícone de app (logo.png/apple-touch-icon)**: o projeto usa um ícone SVG (`assets/logo.png.svg`), compatível com a maioria dos navegadores modernos. Se quiser garantir suporte total (inclusive navegadores mais antigos), gere também `logo.png.ico` (32×32) e `apple-touch-icon.png` (180×180) a partir do mesmo logo, e adicione as tags correspondentes no `<head>`.
 
 7. **Imagem de compartilhamento (Open Graph)**: as tags `og:image`/`twitter:image` apontam para `assets/social-preview.png` (1200×630px) — adicione esse arquivo em `assets/`.
 
