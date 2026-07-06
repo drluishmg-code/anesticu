@@ -15,7 +15,7 @@ Site estático (HTML + CSS + JS puro, sem frameworks, sem build) pronto para pub
 ├── robots.txt
 ├── sitemap.xml
 └── assets/
-    ├── logo.svg           → logo do app (usado no header, rodapé e favicon)
+    ├── logo.png           → logo do app (usado no header, rodapé e favicon)
     ├── favicon.svg
     └── screenshots/       → pasta reservada para as capturas reais do app
 ```
