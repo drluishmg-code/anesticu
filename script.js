@@ -145,6 +145,8 @@
     el.textContent = String(new Date().getFullYear());
   });
 
+
+
   /* ---------- Realce do link ativo no menu conforme a seção visível ---------- */
   const sections = document.querySelectorAll("main section[id]");
   const navAnchors = document.querySelectorAll('.nav-links a[href^="#"], .nav-drawer a[href^="#"]');

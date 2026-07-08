@@ -1334,3 +1334,19 @@ p {
 }
 
 }
+
+
+.appstore-link{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+
+.appstore-link:hover{
+  transform:translateY(-2px);
+}
+
+.appstore-badge{
+  width:180px;
+  height:auto;
+  display:block;
+}
