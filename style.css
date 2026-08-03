@@ -1350,3 +1350,14 @@ p {
   height:auto;
   display:block;
 }
+
+.store-badge{
+    height:60px;
+    width:auto;
+    display:block;
+    transition:transform .2s ease;
+}
+
+.store-badge:hover{
+    transform:translateY(-2px);
+}
