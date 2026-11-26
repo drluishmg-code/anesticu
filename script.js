@@ -140,6 +140,40 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  /* ---------- Botões "testar/baixar": levam direto à loja certa ---------- */
+  // iPhone/iPad/Mac -> App Store; Android -> Google Play; outros -> seção de download
+  const APP_STORE = "https://apps.apple.com/br/app/id6787523253";
+  const PLAY_STORE = "https://play.google.com/store/apps/details?id=br.com.anesticu.app";
+  const ua = navigator.userAgent || "";
+  let storeUrl = "";
+  if (/Android/i.test(ua)) storeUrl = PLAY_STORE;
+  else if (/iPhone|iPad|iPod|Macintosh/i.test(ua)) storeUrl = APP_STORE;
+
+  if (storeUrl) {
+    document.querySelectorAll("[data-store-link]").forEach((el) => {
+      el.setAttribute("href", storeUrl);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+  }
+
+  /* ---------- Barra fixa de download no celular ---------- */
+  const stickyCta = document.querySelector(".sticky-cta");
+  const downloadSection = document.querySelector("#download");
+
+  function toggleStickyCta() {
+    if (!stickyCta) return;
+    let nearDownload = false;
+    if (downloadSection) {
+      const r = downloadSection.getBoundingClientRect();
+      nearDownload = r.top < window.innerHeight && r.bottom > 0;
+    }
+    stickyCta.classList.toggle("is-visible", window.scrollY > 520 && !nearDownload);
+  }
+
+  window.addEventListener("scroll", toggleStickyCta, { passive: true });
+  toggleStickyCta();
+
   /* ---------- Ano corrente no rodapé ---------- */
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = String(new Date().getFullYear());
