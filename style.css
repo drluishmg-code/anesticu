@@ -1361,3 +1361,188 @@ p {
 .store-badge:hover{
     transform:translateY(-2px);
 }
+
+/* ==========================================================================
+   Atualização Nov/2026 — capturas novas (tema claro), galeria e correções
+   ========================================================================== */
+
+/* Menu mobile: escondido no desktop (antes aparecia solto ao lado do botão Baixar) */
+.nav-drawer{
+    display:none;
+}
+
+@media (max-width:860px){
+    .nav-drawer{
+        display:flex;
+    }
+}
+
+/* ----- Hero: dois aparelhos sobrepostos ----- */
+.hero-phones{
+    position:relative;
+    width:min(400px, 88%);
+    margin-inline:auto;
+}
+
+.hero-phones .hero-app-image{
+    width:100%;
+    height:auto;
+    border-radius:34px;
+    border:1px solid rgba(0,0,0,.08);
+    background:#fff;
+    box-shadow:
+        0 30px 60px rgba(15,35,60,.18),
+        0 8px 20px rgba(15,35,60,.10);
+}
+
+.hero-phones .hero-app-back{
+    position:absolute;
+    right:0;
+    top:11%;
+    width:62%;
+    opacity:.96;
+}
+
+.hero-phones .hero-app-front{
+    position:relative;
+    z-index:1;
+    width:72%;
+}
+
+.hero-phones .hero-app-image:hover{
+    transform:translateY(-6px);
+}
+
+.hero-figure{
+    flex-direction:column;
+}
+
+.hero-figure .floating-chip{
+    z-index:2;
+}
+
+.hero-figure .floating-chip.chip-1{
+    top:-3%;
+    right:0;
+}
+
+.hero-figure .floating-chip.chip-2{
+    bottom:1%;
+    left:0;
+}
+
+.hero-footnote{
+    margin-top:var(--space-sm);
+    font-size:.78rem;
+    color:var(--color-text-secondary);
+    max-width:46ch;
+}
+
+@media (max-width:860px){
+    .hero-footnote{
+        margin-inline:auto;
+    }
+
+    .hero-copy .eyebrow{
+        justify-content:center;
+    }
+}
+
+/* ----- Galeria de capturas ----- */
+.screens-gallery{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:36px 28px;
+    max-width:var(--max-w);
+    margin:56px auto 0;
+    padding-inline:var(--space-md);
+}
+
+.screen-card{
+    margin:0;
+}
+
+.screen-card img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:22px;
+    border:1px solid rgba(0,0,0,.08);
+    background:#fff;
+    box-shadow:0 14px 34px rgba(15,35,60,.14);
+    transition:transform .3s ease;
+}
+
+.screen-card figcaption{
+    font-size:.92rem;
+    line-height:1.35;
+}
+
+.gallery-hint{
+    display:none;
+}
+
+@media (max-width:1024px){
+    .screens-gallery{
+        grid-template-columns:repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Celular: faixa horizontal com encaixe, em vez de 12 telas empilhadas */
+@media (max-width:700px){
+    .screens-gallery{
+        display:flex;
+        justify-content:flex-start;
+        gap:16px;
+        max-width:none;
+        margin:36px 0 0;
+        padding:8px var(--space-md) 22px;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        scroll-padding-inline:var(--space-md);
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+    }
+
+    .screens-gallery::-webkit-scrollbar{
+        display:none;
+    }
+
+    .screen-card{
+        flex:0 0 68%;
+        max-width:280px;
+        scroll-snap-align:start;
+    }
+
+    .screen-card:hover{
+        transform:none;
+    }
+
+    .gallery-hint{
+        display:block;
+        text-align:center;
+        font-family:var(--font-mono);
+        font-size:.72rem;
+        color:var(--color-text-secondary);
+    }
+}
+
+/* Cartões de recursos: não deixar palavras longas alargarem a página no celular */
+@media (max-width:560px){
+    .features-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+    .feature-card{
+        padding:var(--space-sm);
+        overflow-wrap:break-word;
+    }
+
+    .feature-card h3{
+        font-size:1rem;
+    }
+
+    .feature-card p{
+        font-size:.86rem;
+    }
+}
